@@ -13,19 +13,19 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Gamer birol=new Gamer(1, "Birol", "Öztürk", "10586746529", LocalDate.of(3000, 8, 7));
+        Gamer test=new Gamer(1, "Birol", "Öztürk", "10586746529", LocalDate.of(3000, 8, 7));
         Game minecraft=new Game(1, 10, 320, "Minecraft");
         Campaign campaign=new Campaign(1, 50, minecraft);
 
-        GamerManager userManager=new GamerManager(birol, new DefaultCheckManager());
+        GamerManager userManager=new GamerManager(test, new MernisCheckManager());
         GameManager gameManager=new GameManager(minecraft);
         CampaignManager campaignManager=new CampaignManager(campaign);
 
         userManager.register();
-        gameManager.sell(birol);
+        gameManager.sell(test);
         campaignManager.add();
         campaignManager.delete();
-        gameManager.sell(birol, campaign);
+        gameManager.sell(test, campaign);
 
 
 
